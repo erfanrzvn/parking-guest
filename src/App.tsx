@@ -4,6 +4,26 @@ import Home from './pages/Home';
 import BrowseParkings from './pages/BrowseParkings';
 import MakeReservation from './pages/MakeReservation';
 
+// Configure Amplify IMMEDIATELY at module load - Guest uses API Key
+import { Amplify } from 'aws-amplify';
+Amplify.configure({
+  Auth: {
+    Cognito: {
+      userPoolId: 'ca-central-1_UecP7kd1N',
+      userPoolClientId: '7ckai37tgmnlqeeq5i4ujvkm6n',
+      identityPoolId: 'ca-central-1:a47d9621-3bf4-48ff-8560-f350e18bbb99',
+    }
+  },
+  API: {
+    GraphQL: {
+      endpoint: 'https://dp457mgtrvdkfod6o6mmhpoy74.appsync-api.ca-central-1.amazonaws.com/graphql',
+      region: 'ca-central-1',
+      defaultAuthMode: 'apiKey',
+      apiKey: 'da2-jjcraxop5bgjvdtm2k4iupt64e'
+    }
+  }
+});
+
 type Page = 'home' | 'browse' | 'reserve';
 
 function App() {
