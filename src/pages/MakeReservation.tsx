@@ -3,7 +3,9 @@ import { generateClient } from 'aws-amplify/data';
 import type { Schema } from '../amplify/data/resource';
 import './MakeReservation.css';
 
-const client = generateClient<Schema>();
+const client = generateClient<Schema>({
+  authMode: 'apiKey', // Use API Key for guest access (no login required)
+});
 
 interface MakeReservationProps {
   parking: any;
