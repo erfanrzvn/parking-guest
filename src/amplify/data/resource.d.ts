@@ -1,5 +1,5 @@
 // Auto-generated Schema types from amplify_outputs.json
-// This file provides type definitions for the backend schema
+import type { Schema as BackendSchema } from '@aws-amplify/data-schema-types';
 
-// Placeholder type - actual types are inferred from amplify_outputs.json
-export type Schema = any;
+// Re-export the schema types inferred from amplify_outputs.json
+export type Schema = BackendSchema;
